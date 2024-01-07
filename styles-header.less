@@ -1,17 +1,21 @@
 /*----------
 Change Log
 20231218 @ 2300: Jared Ledbetter
-    Add:
-        -Initial file setup
+  Add:
+    -Initial file setup
+20231226 @1430: Jared Ledbetter 
+  Add:
+    -Setup Base Form Styles
+20241206 @2300: Jared Ledbetter
+  Add:
+    -Footer form styles 
 ----------*/
 
 /*----------
 [Table of Contents]
 
 0. Global & Extends
-1. jQuery Dependencies
-2. Modal Form
-3. Header
+1. Forms
 
 ----------*/
 
@@ -58,5 +62,107 @@ picture img {
 }
 
 /*----------
-[ 1. jQuery Dependencies ]
+[ 1. Forms ]
 ----------*/
+
+// Variables for Modern UI
+@borderRadius: 4px; // Rounded corners
+@buttonBackgroundColor: #007bff; // Matching blue for buttons
+@buttonHoverBackgroundColor: darken(@buttonBackgroundColor, 10%); // Slightly darker button on hover
+@buttonPadding: 12px 20px; // Padding inside buttons
+@buttonTextColor: #ffffff; // White text on buttons
+@errorTextColor: #dc3545; // Red for errors
+@errorBorderColor: @errorTextColor;
+@formBackgroundColor: #ffffff; // White background for a clean look
+@formTextColor: #333333; // Dark gray for readability
+@inputBorderColor: #cccccc; // Light gray border for inputs
+@inputFocusBorderColor: #007bff; // Bright blue for focus state
+@labelTextColor: #555555; // Medium gray for labels
+@inputPadding: 10px; // Padding inside inputs
+@transitionDuration: 0.3s; // Smooth transition for interactive elements
+
+// Form Styles for Modern UI
+form {
+  background-color: @formBackgroundColor;
+  border-radius: @borderRadius;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+  color: @formTextColor;
+  padding: 20px;
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  label {
+    color: @labelTextColor;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  input[type='text'],
+  input[type='email'],
+  input[type='tel'],
+  input[type='number'],
+  input[type='password'],
+  input[type='search'],
+  input[type='url'],
+  textarea,
+  select {
+    border: 1px solid @inputBorderColor;
+    border-radius: @borderRadius;
+    padding: @inputPadding;
+    width: 100%; // Responsive width
+    box-sizing: border-box; // Include padding and border in the element's width
+    &:focus {
+      border-color: @inputFocusBorderColor;
+      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); // Focus shadow
+      outline: none;
+      transition: border-color @transitionDuration;
+    }
+  }
+
+  input[type='checkbox'],
+  input[type='radio'] {
+    // Custom styles for modern checkboxes and radio buttons
+  }
+
+  button,
+  input[type='submit'],
+  input[type='reset'],
+  input[type='button'] {
+    background-color: @buttonBackgroundColor;
+    color: @buttonTextColor;
+    border: none;
+    border-radius: @borderRadius;
+    padding: @buttonPadding;
+    cursor: pointer;
+    transition: background-color @transitionDuration;
+
+    &:hover {
+      background-color: @buttonHoverBackgroundColor;
+    }
+  }
+
+  .error-message {
+    color: @errorTextColor;
+  }
+
+  .field-error {
+    border-color: @errorBorderColor;
+  }
+}
+
+/*--- Footer Form ---*/
+#gform_4 {
+  background-color: unset;
+  padding: 20px 0 0 0;
+  label {
+    color: white;
+  }
+  .gform_footer {
+    padding: 0;
+    input {
+      width: 100%;
+    }
+  }
+}
