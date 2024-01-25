@@ -8,7 +8,11 @@ Change Log
     -Setup Base Form Styles
 20241206 @2300: Jared Ledbetter
   Add:
-    -Footer form styles 
+    -Footer form styles
+20240116 @2000: Jared Ledbetter
+  Add:
+    -Home page styles
+    -Search form styles
 ----------*/
 
 /*----------
@@ -16,6 +20,8 @@ Change Log
 
 0. Global & Extends
 1. Forms
+2. Home Page
+3. Search Form
 
 ----------*/
 
@@ -56,6 +62,11 @@ Change Log
 @grayLight: hsl(216deg, 4.35%, 77.45%);
 @grayDark: hsl(204deg, 25.86%, 22.75%);
 
+/*--- Globals ---*/
+body {
+  background-color: #f5f5f5;
+}
+
 /*--- Imagify Picture Tag ---*/
 picture img {
   width: inherit !important;
@@ -73,6 +84,7 @@ picture img {
 @buttonTextColor: #ffffff; // White text on buttons
 @errorTextColor: #dc3545; // Red for errors
 @errorBorderColor: @errorTextColor;
+@fontFamily: inherit; // submit button font
 @formBackgroundColor: #ffffff; // White background for a clean look
 @formTextColor: #333333; // Dark gray for readability
 @inputBorderColor: #cccccc; // Light gray border for inputs
@@ -121,15 +133,11 @@ form {
     }
   }
 
-  input[type='checkbox'],
-  input[type='radio'] {
-    // Custom styles for modern checkboxes and radio buttons
-  }
-
   button,
   input[type='submit'],
   input[type='reset'],
   input[type='button'] {
+    font-family: @fontFamily;
     background-color: @buttonBackgroundColor;
     color: @buttonTextColor;
     border: none;
@@ -165,4 +173,37 @@ form {
       width: 100%;
     }
   }
+}
+
+/*----------
+[ 2. Home Page ]
+----------*/
+@media @tablet-large {
+  #home-featured-products,
+  #home-custom-products,
+  #home-learn-more {
+    .ct-section-inner-wrap,
+    .ct-div-block {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    .button {
+      margin-bottom: 20px !important;
+    }
+  }
+}
+
+/*----------
+[ 3. Search Form ]
+----------*/
+
+#search-form {
+  display: none !important;
+}
+#search-form.block-form {
+  display: block !important;
+}
+
+#searchform div {
+  display: flex;
 }
