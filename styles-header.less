@@ -13,6 +13,12 @@ Change Log
   Add:
     -Home page styles
     -Search form styles
+20240120 @2030: Jared Ledbetter
+  Add:
+    -Add Gallery styles
+20240204 @0130: Jared Ledbetter
+  Add:
+    -Style Product Related Products
 ----------*/
 
 /*----------
@@ -22,7 +28,8 @@ Change Log
 1. Forms
 2. Home Page
 3. Search Form
-
+4. Gallery Page
+5. Woo Product Pages
 ----------*/
 
 /*----------
@@ -52,15 +59,7 @@ Change Log
 }
 
 /*--- Colors ---*/
-@burgundy: hsl(0deg, 35.42%, 18.82%);
-@red: hsl(9.61deg, 72.69%, 48.82%);
-@orange: hsl(32.21deg, 87.16%, 57.25%);
-@yellow: hsl(52.17deg, 95.83%, 62.35%);
-@white: hsl(0deg, 0%, 100%);
-@black: hsl(0deg, 0%, 0%);
-@gray: hsl(206.67deg, 10.93%, 51.57%);
-@grayLight: hsl(216deg, 4.35%, 77.45%);
-@grayDark: hsl(204deg, 25.86%, 22.75%);
+@darkBlue: #153a7a;
 
 /*--- Globals ---*/
 body {
@@ -206,4 +205,99 @@ form {
 
 #searchform div {
   display: flex;
+}
+
+#search-icon > svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/*----------
+[ 4. Gallery Page ]
+----------*/
+
+#gallery-page-filter {
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  li {
+    margin: 10px;
+    padding: 5px 15px;
+    border: solid 1px @darkBlue;
+    border-radius: 20px;
+    background-color: white;
+    color: @darkBlue;
+    &:hover {
+      color: white;
+      background-color: @darkBlue;
+    }
+  }
+}
+
+#gallery-card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .card {
+    min-width: 200px;
+    width: 30%;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 10px;
+  }
+  .card-image {
+    min-height: 250px;
+    width: 100%;
+    background-size: cover;
+    background-position: 50%;
+  }
+  .card-product-title {
+    margin: 20px;
+    text-align: center;
+    color: @darkBlue;
+  }
+  @media @tablet {
+    .card {
+      width: calc(50% - 10px);
+    }
+  }
+  @media @mobile {
+    margin: 0;
+    .card {
+      width: calc(100% - 10px);
+    }
+  }
+}
+
+/*----------
+[ 5. Woo Product Pages ]
+----------*/
+
+/*--- Style Product Related Products ---*/
+#cd-related-products {
+  text-align: center;
+  h3 {
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+  h4 {
+    font-size: 1.5em;
+  }
+  a,
+  span {
+    color: white;
+  }
+  span {
+    font-size: 1.2em;
+  }
+  .linked-products-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }

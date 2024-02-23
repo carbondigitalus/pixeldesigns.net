@@ -14,24 +14,31 @@ function custom_menu_order($menu_ord) {
         'options-general.php',                      // Settings
         'tools.php',                                // Tools
         'users.php',                                // Users
+        
         // BUILDER SECTION
         'ct_dashboard_page',                        // Oxygen
+        'agency_base_options',                      // Agency Base
+        
         // CPT SECTION
         'cptui_main_menu',                          // CPT UI
         'edit.php?post_type=acf-field-group',       // ACF
-        'edit.php?post_type=links',                 // Affiliate Links CPT
-        'edit.php?post_type=locations',             // Locations CPT
-        'edit.php?post_type=products',              // Products CPT
-        'edit.php?post_type=projects',              // Projects CPT
-        'edit.php?post_type=services',              // Services CPT
-        'edit.php?post_type=tools',                 // Web Tools CPT
+        'edit.php?post_type=custom-products',       // Custom Products CPT
+        'edit.php?post_type=faq',                   // Custom Products CPT
+        
+        // WOOCOMMERCE SECTION
+        'woocommerce',                              // WooCommerce Main Page
+        'wc-admin&path=/analytics/overview',        // WC Analytics
+        'woocommerce-marketing',                    // WC Marketing
+        'wc-admin&path=/wc-pay-welcome-page',       // WC Payments
+        'edit.php?post_type=product',               // WC Products
+        
         // OTHER PLUGINS
         'cookie-law-info',                          //Cookie Yes
         'gf_edit_forms',                            // Gravity Forms
-        'link_whisper_license',                     // Link Whisper
-        'schedulepress',                            // Schedule Press
+        // 'link_whisper_license',                     // Link Whisper
+        // 'schedulepress',                            // Schedule Press
         'seopress-option'                           // SEO Press
-        );
+    );
 }
     
 add_filter('menu_order', 'custom_menu_order', 100);

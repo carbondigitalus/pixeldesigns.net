@@ -20,6 +20,22 @@ function rename_core_menu_item() {
         if ($item[2] == 'seopress-option') {
             $menu[$key][0] = 'SEO Press';  // New name for the menu item
         }
+        // Rename WC Analytics menu item
+        if ($item[2] == 'wc-admin&path=/analytics/overview') {
+            $menu[$key][0] = 'WC Analytics';  // New name for the menu item
+        }
+        // Rename WC Marketing menu item
+        if ($item[2] == 'woocommerce-marketing') {
+            $menu[$key][0] = 'WC Marketing';  // New name for the menu item
+        }
+        // Rename WC Marketing menu item
+        if ($item[2] == 'wc-admin&path=/wc-pay-welcome-page') {
+            $menu[$key][0] = 'WC Payments';  // New name for the menu item
+        }        
+        // Rename WC Products menu item
+        if ($item[2] == 'edit.php?post_type=product') {
+            $menu[$key][0] = 'WC Products';  // New name for the menu item
+        }
     }
 }
 
